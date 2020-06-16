@@ -1,0 +1,432 @@
+/* GENERAL RULES (reset) - start */
+general rules {}
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+  }
+  body div, span, ul, a {
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  img {
+    width: 100%;
+  }
+/* GENERAL RULES (reset) - end */
+
+
+/* BASE LAYOUT - inizio */
+/* Main-wrapper app */
+.main-wrapper {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: white; //DEBUG
+}
+
+/* Wrapper menu e chat */
+#content {
+  display: flex;
+  height: 95%;
+  width: 80%;
+  margin: auto;
+  background-color: cyan; //DEBUG - canc
+}
+
+.hide {
+  display: none;
+}
+/* BASE LAYOUT - fine */
+
+
+
+/* MENU SINISTRA */
+/* Navbar left-menu,
+Navbar right-menu */
+#left-menu{
+  float: left;
+  width: 40%;
+  height: 100%;
+  background-color: gray; //DEBUG
+}
+
+/* Info mio profilo */
+#myprofile-header,
+#myprofile-right-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #ededed;
+  height: 60px;
+  width: 100%;
+}
+#myprofile-header {
+  border-right: 1px solid lightgray;
+}
+#myprofile-header img,
+#myprofile-right-header img {
+  float: left;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+}
+#myprofile-header i,
+#myprofile-right-header i {
+  float: right;
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  color: gray;
+}
+
+/* Pannello notifiche */
+#notification-panel {
+  height: 90px;
+  width: 100%;
+  background-color: #9de1fe;
+}
+#notification-panel i {
+  padding: 10px;
+  font-size: 20px;
+  color: #9de1fe;
+}
+
+/* icona campanella notifica */
+#notification-panel .icon-box {
+  display: inline-block;
+  border-radius: 50%;
+  background-color: white;
+  margin-top: 15px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+#notification-panel .text-box {
+  margin-top: 25px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+#notification-panel .text-box i {
+  color: gray;
+}
+#notification-panel .text-box span {
+  display: inline-block;
+  line-height: 10px;
+}
+
+#notification-panel .text-box span:first-child {
+  display: block;
+  line-height: 1px;
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+}
+
+#notification-panel .text-box span:last-child {
+  display: block;
+  line-height: 1px;
+  font-size: 14px;
+}
+#notification-panel .text-box a {
+  color: gray;
+}
+
+
+/* Barra ricerca */
+#search-bar {
+  height: 50px;
+  width: 100%;
+  justify-content: center;
+  background-color: #ededed;
+  line-height: 50px;
+}
+#search-icon {
+  width: 25%;
+  position: relative;
+  left: 5px;
+  font-size: 14px;
+  padding: 5px 5px 5px 15px;
+  color: gray;
+  background-color: white;
+}
+#search-bar input {
+  width: 90%;
+  border: none;
+  font-size: 15px;
+  padding: 5px 5px 5px 15px;
+}
+
+
+/* Pannello contatti */
+#contacts-panel {
+  background-color: white;
+  overflow-y: auto;
+  height: calc(100% - 200px);
+}
+
+/* Contatti*/
+.contact {
+  height: 70px;
+  width: 100%;
+  border-bottom: 1px solid lightgray;
+}
+.contact .icon-box img {
+  float: left;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+/* Stile contenuto msg chat */
+.box {
+  padding: 10px;
+}
+.img-box {
+  float: left;
+}
+.text-box {
+  float: left;
+  margin-top: 8px;
+  margin-left: 15px;
+}
+.text-box .message {
+  margin-top: 3px;
+  color: gray;
+}
+.time-box {
+  float: right;
+  font-size: 13px;
+  color: gray;
+}
+
+
+
+/* MENU DESTRA*/
+#right-menu {
+  float: left;
+  width: 60%;
+  height: 100%;
+  background-color: lightgray; //DEBUG
+}
+
+/* Sezione conversazioni */
+/* Wrapper chat */
+.chats {
+  height: calc(100% - 130px);  //130px --> header + barra invio mesg
+  overflow-y: auto;
+  background-color: darkgray; //DEBUG
+  background-image: url(..img/background.jpg);
+}
+
+.chat {
+  /* display: none; */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 100px;
+}
+
+
+/* Templates per creazione msg chat*/
+.msg-wrapper {
+  position: relative;
+  margin: 15px;
+  padding: 10px 50px 10px 10px;
+  border-radius: 5px;
+}
+
+.msg-wrapper .msg-time {
+  position: absolute;
+  font-size: 10px;
+  bottom: 5px;
+  right: 10px;
+}
+
+/* Style di messaggio inviato */
+.msg-sent-green{
+  background-color: #dcf8c6;
+  align-self: flex-end;
+}
+
+/* Style di messaggio ricevuto */
+.msg-received-white {
+  background-color: white;
+  align-self: flex-start;
+}
+
+
+
+/* Barra composizione messaggio */
+#send-msg-bar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 70px;
+  padding: 0 20px;
+  background-color: #e5ddd5;
+}
+
+button #btn-emoji {
+  border: none;
+  background-color: #e5ddd5; //DEBUG
+}
+
+#emoji-icons {
+  width: 100px;
+  height: 50px;
+  border: 1px solid black;
+}
+#smile-icon i {
+  width: 50px;
+}
+
+#text-input {
+  flex-grow: 1;
+  margin: 0 15px;
+  border: none;
+  /* border-radius: 5%; */
+  font-size: 15px;
+  padding: 10px;
+}
+
+#send-input i {
+  font-size: 25px;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* *************** CSS - General Style Template *************** */
+/* CLASS PROPERTIES - start rules */
+class_properties {}
+  .float {
+    float: left;
+  }
+  .clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .transform {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .text-bold {
+    font-weight: 700;
+  }
+  ul.list-unstyled {
+    padding-left: 0;
+    }
+    ul.list-unstyled li {
+      display: inline-block;
+      list-style: none;
+    }
+    ul.list-unstyled li a {
+      text-decoration: none;
+    }
+/* CLASS PROPERTIES - end rules */
+
+
+
+/* BASE LAYOUT - inizio */
+regole layout {}
+/* BASE LAYOUT - fine */
+
+
+
+/* COMPONENTS (reusable) - start rules */
+components {}
+  components
+/* COMPONENTS (reusable) - end rules */
+
+
+
+/* NAVBAR - start rules */
+nav {}
+  nav {}
+/* NAVBAR - end rules */
+
+
+/* HEADER - start rules */
+header {}
+  header {}
+/* HEADER - end rules */
+
+
+/* MAIN - start rules */
+main {}
+  main {}
+/* MAIN - end rules */
+
+
+/* FOOTER - start rules */
+footer {}
+  footer {}
+/* FOOTER - end rules */
+
+
+
+/* MEDIA QUERY -start rules */
+@media query {}
+  /* Media Query - xs  */
+  @media all and (max-width: 767px) {}
+
+  /* Media Query - sm  */
+  @media all and (min-width: 768px) and (max-width: 991px) {}
+
+  /* Media Query - md  */
+  @media all and (min-width: 992px) and (max-width: 1199px) {}
+
+  /* Media Query - lg  */
+  @media all and (min-width: 1200px) {}
+/* MEDIA QUERY -end rules */
+
+
+
+/* DEBUGG - start rules*/
+/* debug {}
+  .debug .container {
+    background-color: #16D893;
+    border: 1px solid blue;
+  }
+  .debug [class*="col-"] {
+    background-color: yellow;
+    border: 1px solid red;
+    height: 100px;
+  } */
+/* DEBUGG - end rules */

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <!-- <link rel="stylesheet" href="css/12col.css"> -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/fav.png">
+    <title>BoolzApp</title>
+  </head>
+  <body class="debu">
+
+    <div class="main-wrapper">
+
+      <!-- Schermata menu e chat - inizio -->
+      <main id="content" class="clearfix">
+
+        <!-- MENU SINISTRA - inizio -->
+        <div id="left-menu">
+
+          <!-- Header left-menu profilo personale - inizio -->
+          <div id="myprofile-header" class="box clearfix">
+            <img src="img/mio-avatar.jpg" alt="User profile image">
+            <div class="">
+              <i class="fas fa-ellipsis-v"></i>
+              <i class="fas fa-comment-alt"></i>
+              <i class="fas fa-circle-notch"></i>
+            </div>
+          </div>
+          <!-- Header left-menu profilo personale - fine -->
+
+          <!-- Pannello notifiche - inizio -->
+          <div id="notification-panel" class="box clearfix">
+            <div class="icon-box float"><i class="fas fa-bell-slash"></i></div>
+            <div class="text-box float">
+              <span>Ricevi notifiche di nuovi messaggi</span>
+              <span><a href="">Attiva notifiche desktop</a>
+                <i class="fas fa-angle-right"></i></span>
+            </div>
+          </div>
+          <!-- Pannello notifiche - fine -->
+
+          <!-- Barra ricerca - inizio -->
+          <div id="search-bar" class="box">
+            <span id="search-icon"><i class="fas fa-search"></i></span>
+            <input id="search-input" type="text" placeholder="Cerca o inizia una nuova chat">
+          </div>
+          <!-- Barra ricerca - fine -->
+
+          <!-- Pannello contatti - inizio -->
+          <div id="contacts-panel">
+
+            <div class="contact box">
+              <div class="icon-box">
+                <img src="img/avatar1.jpg" alt="User profile image">
+              </div>
+              <div class="text-box">
+                <span class="contact-name">Michele</span>
+                <div class="message">Non poteva essere altrimenti</div>
+              </div>
+              <div class="time-box">17:53</div>
+            </div>
+
+            <div class="contact box">
+              <div class="icon-box">
+                <img src="img/avatar2.jpg" alt="User profile image">
+              </div>
+              <div class="text-box">
+                <span class="contact-name">Fabio</span>
+                <div class="message">Non poteva essere altrimenti</div>
+              </div>
+              <div class="time-box">17:53</div>
+            </div>
+
+            <div class="contact box">
+              <div class="icon-box">
+                <img src="img/avatar3.jpg" alt="User profile image">
+              </div>
+              <div class="text-box">
+                <span class="contact-name">Samuele</span>
+                <div class="message">Non poteva essere altrimenti</div>
+              </div>
+              <div class="time-box">17:53</div>
+            </div>
+
+            <div class="contact box">
+              <div class="icon-box">
+                <img src="img/avatar4.jpg" alt="User profile image">
+              </div>
+              <div class="text-box">
+                <span class="contact-name">Alessandro B.</span>
+                <div class="message">Non poteva essere altrimenti</div>
+              </div>
+              <div class="time-box">17:53</div>
+            </div>
+
+            <div class="contact box">
+              <div class="icon-box">
+                <img src="img/avatar5.jpg" alt="User profile image">
+              </div>
+              <div class="text-box">
+                <span class="contact-name">Alessandro L.</span>
+                <div class="message">Non poteva essere altrimenti</div>
+              </div>
+              <div class="time-box">17:53</div>
+            </div>
+
+            <div class="contact box">
+              <div class="icon-box">
+                <img src="img/avatar6.jpg" alt="User profile image">
+              </div>
+              <div class="text-box">
+                <span class="contact-name">Claudia</span>
+                <div class="message">Non poteva essere altrimenti</div>
+              </div>
+              <div class="time-box">17:53</div>
+            </div>
+
+            <div class="contact box">
+              <div class="icon-box">
+                <img src="img/avatar7.jpg" alt="User profile image">
+              </div>
+              <div class="text-box">
+                <span class="contact-name">Davide</span>
+                <div class="message">Non poteva essere altrimenti</div>
+              </div>
+              <div class="time-box">17:53</div>
+            </div>
+
+            <div class="contact box">
+              <div class="icon-box">
+                <img src="img/avatar8.jpg" alt="User profile image">
+              </div>
+              <div class="text-box">
+                <span class="contact-name">Federico</span>
+                <div class="message">Non poteva essere altrimenti</div>
+              </div>
+              <div class="time-box">17:53</div>
+            </div>
+
+          </div>
+          <!-- Pannello contatti - fine -->
+
+        </div>
+        <!-- MENU SINISTRA - fine -->
+
+
+
+        <!-- MENU DESTRA - inizio -->
+        <div id="right-menu">
+
+          <!-- Header right-menu - inizio -->
+          <div id="myprofile-right-header" class="box">
+            <img src="img/avatar1.jpg" alt="User profile image">
+            <div class="profile-text">
+              <span>Michele</span><br>
+              <span id="last-access">ultimo accesso oggi alle 15:40</span>
+            </div>
+            <i class="fas fa-ellipsis-v"></i>
+            <i class="fas fa-paperclip"></i>
+            <i class="fas fa-search"></i>
+          </div>
+          <!-- Header right-menu - fine -->
+
+          <!-- Chat dinamiche JS - inizio -->
+          <div class="chats">
+
+            <div class="chat" data-contact="1">
+
+              <div class="msg-wrapper msg-sent-green">
+                <p class="msg-text">Testo messaggio inviato</p>
+                <span class="msg-time">09:00</span>
+              </div>
+
+              <div class="msg-wrapper msg-received-white">
+                <p class="msg-text">Testo messaggio ricevuto</p>
+                <span class="msg-time">09:10</span>
+              </div>
+
+
+
+              <!-- Templates per creazione msg chat automatico - inizio -->
+              <!-- <div class="template hide">
+                <div class="template chat" data-contact="1">
+
+                  <div class="template msg-wrapper msg-sent-green">
+                    <p class="template msg-text">Testo messaggio inviato</p>
+                    <span class="template msg-time">09:00</span>
+                  </div>
+
+                  <div class="template msg-wrapper msg-received-white">
+                    <p class="template msg-text">Testo messaggio ricevuto</p>
+                    <span class="template msg-time">09:10</span>
+                  </div>
+
+                </div>
+              </div> -->
+              <!-- Templates per creazione msg chat automatico - fine-->
+
+
+            </div>
+
+          </div>
+          <!-- Chat dinamiche JS - fine -->
+
+
+          <!-- Barra composizione msg - inizio -->
+          <div id="send-msg-bar">
+            <button id="btn-emoji">
+              <div id="icons-emoji"></div>
+              <span id="smile-icon">
+                <i class="far fa-smile"></i>
+              </span>
+            </button>
+            <input id="text-input" type="text" placeholder="Scrivi un messaggio">
+            <button type="button" name="button">
+              <span id="send-input"><i class="fas fa-paper-plane"></i></span>
+            </button>
+          </div>
+          <!-- Barra composizione msg - fine -->
+
+        </div>
+        <!-- MENU DESTRA - fine -->
+      </main>
+      <!-- Schermata menu e chat - fine -->
+
+    </div>
+
+    <script type="text/javascript" src="js/script.js"></script>
+
+  </body>
+</html>
