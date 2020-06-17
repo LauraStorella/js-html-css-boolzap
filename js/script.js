@@ -35,7 +35,7 @@ Step #4 - Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono vi
 //e cliccando “invia” il testo viene aggiunto al thread sopra,
 //come messaggio verde
 
-// Creo evento click tramite tasto invio nella barra di ricerca
+// // Creo evento click tramite tasto invio nella barra di ricerca
 $('.send-input').click( function() {
   sendMsg();
 });
@@ -45,7 +45,7 @@ $('.send-input').click( function() {
 function sendMsg() {
 
   // Leggo e catturo input msg immesso in barra invio msg
-  var msgText = $('.text-input input').val();
+  var msgText = $('.text-input').val();
   // console.log(msgText);
 
   if (msgText != ' ') {
@@ -58,12 +58,49 @@ function sendMsg() {
     newMsg.children('.msg-text').text(msgText);
 
     // Aggiungo classe relativa a msg inviato
-    newMsg.addClass('msg-sent-green');
+    newMsg.addClass('chat msg-wrapper msg-sent-green');
+
+    // Inserire orario corrente nel msg
+    var date = new Date();
+    var currentHours = date.getHours();
+    var currentMinutes = date.getMinutes();
+    var currentTime = currentHours + ':' + currentMinutes;
+    newMsg.children('.msg-time').text(currentTime);
 
     // Appendo nuovo messaggio nella chat
     $('.chats').append(newMsg);
     // console.log(newMsg);
+
+    // Reset campo input
+    $('.text-input').val(' ');
+
+    //Risposta generata automaticamente da pc dopo 1 secondo
+    setTimeout(pcReplay, 1000);
   }
+}
+
+
+
+// MILESTONE 2
+// -------------------- Funzione msg automatico pc --------------------
+function pcReplay() {
+
+    // Clono template msg automatico del pc
+    var pcMsg = $('.template-pc p').clone();
+    // console.log(newMsg);
+
+    // Aggiungo testo del campo input
+    pcMsg.children('.msg-text').text(pcMsg);
+
+    // Aggiungo classe relativa a msg inviato
+    pcMsg.addClass('chat msg-wrapper msg-received-white');
+
+    // Appendo nuovo messaggio nella chat
+    $('.chats').append(pcMsg);
+    // console.log(newMsg);
+
+    // Reset campo input
+    $('.text-input').val(' ');
 }
 
 
@@ -71,7 +108,18 @@ function sendMsg() {
 
 
 
-// MILESTONE 2
+
+
+
+
+
+
+
+
+
+
+
+
 // -------------------- Funzione ricerca contatto in lista ------------------
 // Alla pressione di un tasto nel campo barra di ricerca
 $('.search-bar').keyup(function(event){
