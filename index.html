@@ -17,13 +17,13 @@
     <div class="main-wrapper">
 
       <!-- Schermata menu e chat - inizio -->
-      <main id="content" class="clearfix">
+      <main class="content" class="clearfix">
 
         <!-- MENU SINISTRA - inizio -->
-        <div id="left-menu">
+        <div class="left-menu">
 
           <!-- Header left-menu profilo personale - inizio -->
-          <div id="myprofile-header" class="box clearfix">
+          <div class="myprofile-header" class="box clearfix">
             <img src="img/mio-avatar.jpg" alt="User profile image">
             <div class="">
               <i class="fas fa-ellipsis-v"></i>
@@ -34,7 +34,7 @@
           <!-- Header left-menu profilo personale - fine -->
 
           <!-- Pannello notifiche - inizio -->
-          <div id="notification-panel" class="box clearfix">
+          <div class="notification-panel" class="box clearfix">
             <div class="icon-box float"><i class="fas fa-bell-slash"></i></div>
             <div class="text-box float">
               <span>Ricevi notifiche di nuovi messaggi</span>
@@ -45,14 +45,14 @@
           <!-- Pannello notifiche - fine -->
 
           <!-- Barra ricerca - inizio -->
-          <div id="search-bar" class="box">
-            <span id="search-icon"><i class="fas fa-search"></i></span>
-            <input id="search-input" type="text" placeholder="Cerca o inizia una nuova chat">
+          <div class="search-bar" class="box">
+            <span class="search-icon"><i class="fas fa-search"></i></span>
+            <input class="search-input" type="text" placeholder="Cerca o inizia una nuova chat">
           </div>
           <!-- Barra ricerca - fine -->
 
           <!-- Pannello contatti - inizio -->
-          <div id="contacts-panel">
+          <div class="contacts-panel">
 
             <div class="contact box">
               <div class="icon-box">
@@ -151,14 +151,14 @@
 
 
         <!-- MENU DESTRA - inizio -->
-        <div id="right-menu">
+        <div class="right-menu">
 
           <!-- Header right-menu - inizio -->
-          <div id="myprofile-right-header" class="box">
+          <div class="myprofile-right-header" class="box">
             <img src="img/avatar1.jpg" alt="User profile image">
             <div class="profile-text">
               <span>Michele</span><br>
-              <span id="last-access">ultimo accesso oggi alle 15:40</span>
+              <span class="last-access">ultimo accesso oggi alle 15:40</span>
             </div>
             <i class="fas fa-ellipsis-v"></i>
             <i class="fas fa-paperclip"></i>
@@ -169,56 +169,38 @@
           <!-- Chat dinamiche JS - inizio -->
           <div class="chats">
 
+            <!-- Singola chat - inizio -->
             <div class="chat" data-contact="1">
-
+              <!-- Messaggio inviato - inizio -->
               <div class="msg-wrapper msg-sent-green">
                 <p class="msg-text">Testo messaggio inviato</p>
                 <span class="msg-time">09:00</span>
               </div>
+              <!-- Messaggio inviato - fine -->
 
+              <!-- Messaggio ricevuto - inizio -->
               <div class="msg-wrapper msg-received-white">
                 <p class="msg-text">Testo messaggio ricevuto</p>
                 <span class="msg-time">09:10</span>
               </div>
-
-
-
-              <!-- Templates per creazione msg chat automatico - inizio -->
-              <!-- <div class="template hide">
-                <div class="template chat" data-contact="1">
-
-                  <div class="template msg-wrapper msg-sent-green">
-                    <p class="template msg-text">Testo messaggio inviato</p>
-                    <span class="template msg-time">09:00</span>
-                  </div>
-
-                  <div class="template msg-wrapper msg-received-white">
-                    <p class="template msg-text">Testo messaggio ricevuto</p>
-                    <span class="template msg-time">09:10</span>
-                  </div>
-
-                </div>
-              </div> -->
-              <!-- Templates per creazione msg chat automatico - fine-->
-
-
+              <!-- Messaggio ricevuto - fine -->
             </div>
-
+            <!-- Singola chat - fine -->
           </div>
           <!-- Chat dinamiche JS - fine -->
 
 
           <!-- Barra composizione msg - inizio -->
-          <div id="send-msg-bar">
-            <button id="btn-emoji">
-              <div id="icons-emoji"></div>
-              <span id="smile-icon">
+          <div class="send-msg-bar">
+            <button class="btn-emoji">
+              <div class="icons-emoji"></div>
+              <span class="smile-icon">
                 <i class="far fa-smile"></i>
               </span>
             </button>
-            <input id="text-input" type="text" placeholder="Scrivi un messaggio">
+            <input class="text-input" type="text" placeholder="Scrivi un messaggio">
             <button type="button" name="button">
-              <span id="send-input"><i class="fas fa-paper-plane"></i></span>
+              <span class="send-input"><i class="fas fa-paper-plane"></i></span>
             </button>
           </div>
           <!-- Barra composizione msg - fine -->
@@ -229,6 +211,16 @@
       <!-- Schermata menu e chat - fine -->
 
     </div>
+
+
+    <!-- Templates -->
+    <div class="template ">
+      <div class="msg-wrapper">
+        <p class="msg-text"></p>
+        <span class="msg-time"></span>
+      </div>
+    </div>
+
 
     <script type="text/javascript" src="js/script.js"></script>
 
