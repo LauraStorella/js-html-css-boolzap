@@ -54,7 +54,7 @@
           <!-- Pannello contatti - inizio -->
           <div class="contacts-panel">
 
-            <div class="contact box">
+            <div class="contact active box" data-contact="0">
               <div class="icon-box">
                 <img src="img/avatar1.jpg" alt="User profile image">
               </div>
@@ -65,7 +65,7 @@
               <div class="time-box">17:53</div>
             </div>
 
-            <div class="contact box">
+            <div class="contact box" data-contact="1">
               <div class="icon-box">
                 <img src="img/avatar2.jpg" alt="User profile image">
               </div>
@@ -76,7 +76,7 @@
               <div class="time-box">17:53</div>
             </div>
 
-            <div class="contact box">
+            <div class="contact box" data-contact="2">
               <div class="icon-box">
                 <img src="img/avatar3.jpg" alt="User profile image">
               </div>
@@ -87,7 +87,7 @@
               <div class="time-box">17:53</div>
             </div>
 
-            <div class="contact box">
+            <div class="contact box" data-contact="3">
               <div class="icon-box">
                 <img src="img/avatar4.jpg" alt="User profile image">
               </div>
@@ -98,7 +98,7 @@
               <div class="time-box">17:53</div>
             </div>
 
-            <div class="contact box">
+            <div class="contact box" data-contact="4">
               <div class="icon-box">
                 <img src="img/avatar5.jpg" alt="User profile image">
               </div>
@@ -109,7 +109,7 @@
               <div class="time-box">17:53</div>
             </div>
 
-            <div class="contact box">
+            <div class="contact box" data-contact="5">
               <div class="icon-box">
                 <img src="img/avatar6.jpg" alt="User profile image">
               </div>
@@ -120,7 +120,7 @@
               <div class="time-box">17:53</div>
             </div>
 
-            <div class="contact box">
+            <div class="contact box" data-contact="6">
               <div class="icon-box">
                 <img src="img/avatar7.jpg" alt="User profile image">
               </div>
@@ -131,7 +131,7 @@
               <div class="time-box">17:53</div>
             </div>
 
-            <div class="contact box">
+            <div class="contact box" data-contact="7">
               <div class="icon-box">
                 <img src="img/avatar8.jpg" alt="User profile image">
               </div>
@@ -154,10 +154,10 @@
         <div class="right-menu">
 
           <!-- Header right-menu - inizio -->
-          <div class="myprofile-right-header" class="box">
+          <div class="myprofile-right-header box">
             <img src="img/avatar1.jpg" alt="User profile image">
             <div class="profile-text">
-              <span>Michele</span><br>
+              <span class="user-name">Michele</span><br>
               <span class="last-access">ultimo accesso oggi alle 15:40</span>
             </div>
             <i class="fas fa-ellipsis-v"></i>
@@ -166,28 +166,216 @@
           </div>
           <!-- Header right-menu - fine -->
 
-          <!-- Chat dinamiche JS - inizio -->
+          <!-- CHAT dinamiche JS - inizio -->
           <div class="chats">
 
             <!-- Singola chat - inizio -->
-            <div class="chat" data-contact="1">
+            <div class="chat chat-active" data-chat="0">
               <!-- Messaggio inviato - inizio -->
               <div class="msg-wrapper msg-sent-green">
-                <p class="msg-text">Testo messaggio inviato</p>
+                <p class="msg-text">Ciao, come stai?</p>
                 <span class="msg-time">09:00</span>
+                <span class="hide"><i class="fa fa-chevron-down f-right"></i></span>
+              </div>
+              <div class="message-options right">
+              	<div class="message-info">Info messaggio</div>
+              	<div class="message-delete">Cancella messaggio</div>
               </div>
               <!-- Messaggio inviato - fine -->
 
               <!-- Messaggio ricevuto - inizio -->
               <div class="msg-wrapper msg-received-white">
-                <p class="msg-text">Testo messaggio ricevuto</p>
+                <p class="msg-text">Bene, grazie!</p>
                 <span class="msg-time">09:10</span>
+                <span class="hide"><i class="fa fa-chevron-down f-right"></i></span>
+              </div>
+              <div class="message-options">
+              	<div class="message-info">Info messaggio</div>
+              	<div class="message-delete">Cancella messaggio</div>
               </div>
               <!-- Messaggio ricevuto - fine -->
             </div>
             <!-- Singola chat - fine -->
           </div>
-          <!-- Chat dinamiche JS - fine -->
+
+          <div class="chat hide" data-chat="1">
+            <!-- Messaggio inviato - inizio -->
+            <div class="msg-wrapper msg-sent-green">
+              <p class="msg-text">Ehi!</p>
+              <span class="msg-time">09:00</span>
+              <span class="hide"><i class="fa fa-chevron-down f-right"></i></span>
+            </div>
+            <div class="message-options">
+            	<div class="message-info">Info messaggio</div>
+            	<div class="message-delete">Cancella messaggio</div>
+            </div>
+            <!-- Messaggio inviato - fine -->
+
+            <!-- Messaggio ricevuto - inizio -->
+            <div class="msg-wrapper msg-received-white">
+              <p class="msg-text">Ciao!</p>
+              <span class="msg-time">09:10</span>
+              <span class="hide"><i class="fa fa-chevron-down f-right"></i></span>
+            </div>
+            <div class="message-options">
+            	<div class="message-info">Info messaggio</div>
+            	<div class="message-delete">Cancella messaggio</div>
+            </div>
+            <!-- Messaggio ricevuto - fine -->
+          </div>
+
+          <div class="chat hide" data-chat="2">
+            <!-- Messaggio inviato - inizio -->
+            <div class="msg-wrapper msg-sent-green">
+              <p class="msg-text">Ehi, come va?</p>
+              <span class="msg-time">09:00</span>
+              <span class="hide"><i class="fa fa-chevron-down f-right"></i></span>
+            </div>
+            <!-- Messaggio inviato - fine -->
+
+            <!-- Messaggio ricevuto - inizio -->
+            <div class="msg-wrapper msg-received-white">
+              <p class="msg-text">Tutto bene, grazie. Tu?</p>
+              <span class="msg-time">09:10</span>
+              <span class="hide"><i class="fa fa-chevron-down f-right"></i></span>
+            </div>
+            <div class="message-options">
+            	<div class="message-info">Info messaggio</div>
+            	<div class="message-delete">Cancella messaggio</div>
+            </div>
+            <!-- Messaggio ricevuto - fine -->
+          </div>
+
+          <div class="chat hide" data-chat="3">
+            <!-- Messaggio inviato - inizio -->
+            <div class="msg-wrapper msg-sent-green">
+              <p class="msg-text">Ci vediamo stasera?</p>
+              <span class="msg-time">09:00</span>
+              <span class="hide"><i class="fa fa-chevron-down f-right"></i></span>
+            </div>
+            <div class="message-options">
+            	<div class="message-info">Info messaggio</div>
+            	<div class="message-delete">Cancella messaggio</div>
+            </div>
+            <!-- Messaggio inviato - fine -->
+
+            <!-- Messaggio ricevuto - inizio -->
+            <div class="msg-wrapper msg-received-white">
+              <p class="msg-text">No, non posso...</p>
+              <span class="msg-time">09:10</span>
+              <span class="hide"><i class="fa fa-chevron-down f-right"></i></span>
+            </div>
+            <div class="message-options">
+            	<div class="message-info">Info messaggio</div>
+            	<div class="message-delete">Cancella messaggio</div>
+            </div>
+            <!-- Messaggio ricevuto - fine -->
+          </div>
+
+          <div class="chat hide" data-chat="4">
+            <!-- Messaggio inviato - inizio -->
+            <div class="msg-wrapper msg-sent-green">
+              <p class="msg-text">Sei arrivata?</p>
+              <span class="msg-time">09:00</span>
+              <span class="hide"><i class="fa fa-chevron-down f-right"></i></span>
+            </div>
+            <div class="message-options">
+            	<div class="message-info">Sì...</div>
+            	<div class="message-delete">Cancella messaggio</div>
+            </div>
+            <!-- Messaggio inviato - fine -->
+
+            <!-- Messaggio ricevuto - inizio -->
+            <div class="msg-wrapper msg-received-white">
+              <p class="msg-text">Hai sentito gli altri?</p>
+              <span class="msg-time">09:10</span>
+              <span class="hide"><i class="fa fa-chevron-down f-right"></i></span>
+            </div>
+            <div class="message-options">
+            	<div class="message-info">Sì, ci vediamo tutti domani sera</div>
+            	<div class="message-delete">Cancella messaggio</div>
+            </div>
+            <!-- Messaggio ricevuto - fine -->
+          </div>
+
+          <div class="chat hide" data-chat="5">
+            <!-- Messaggio inviato - inizio -->
+            <div class="msg-wrapper msg-sent-green">
+              <p class="msg-text">Ehi, novità?</p>
+              <span class="msg-time">09:00</span>
+              <span class="hide"><i class="fa fa-chevron-down f-right"></i></span>
+            </div>
+            <div class="message-options">
+            	<div class="message-info">Info messaggio</div>
+            	<div class="message-delete">Cancella messaggio</div>
+            </div>
+            <!-- Messaggio inviato - fine -->
+
+            <!-- Messaggio ricevuto - inizio -->
+            <div class="msg-wrapper msg-received-white">
+              <p class="msg-text">Niente di che...</p>
+              <span class="msg-time">09:10</span>
+              <span class="hide"><i class="fa fa-chevron-down f-right"></i></span>
+            </div>
+            <div class="message-options">
+            	<div class="message-info">Info messaggio</div>
+            	<div class="message-delete">Cancella messaggio</div>
+            </div>
+            <!-- Messaggio ricevuto - fine -->
+          </div>
+
+          <div class="chat hide" data-chat="6">
+            <!-- Messaggio inviato - inizio -->
+            <div class="msg-wrapper msg-sent-green">
+              <p class="msg-text">Ci vediamo stasera?</p>
+              <span class="msg-time">09:00</span>
+              <span class="hide"><i class="fa fa-chevron-down f-right"></i></span>
+            </div>
+            <div class="message-options">
+            	<div class="message-info">Info messaggio</div>
+            	<div class="message-delete">Cancella messaggio</div>
+            </div>
+            <!-- Messaggio inviato - fine -->
+
+            <!-- Messaggio ricevuto - inizio -->
+            <div class="msg-wrapper msg-received-white">
+              <p class="msg-text">Certamente</p>
+              <span class="msg-time">09:10</span>
+              <span class="hide"><i class="fa fa-chevron-down f-right"></i></span>
+            </div>
+            <div class="message-options">
+            	<div class="message-info">Info messaggio</div>
+            	<div class="message-delete">Cancella messaggio</div>
+            </div>
+            <!-- Messaggio ricevuto - fine -->
+          </div>
+
+          <div class="chat hide" data-chat="7">
+            <!-- Messaggio inviato - inizio -->
+            <div class="msg-wrapper msg-sent-green">
+              <p class="msg-text">Hai fatto il colloquio?</p>
+              <span class="msg-time">09:00</span>
+              <span class="hide"><i class="fa fa-chevron-down f-right"></i></span>
+            </div>
+            <div class="message-options">
+            	<div class="message-info">Info messaggio</div>
+            	<div class="message-delete">Cancella messaggio</div>
+            </div>
+            <!-- Messaggio inviato - fine -->
+
+            <!-- Messaggio ricevuto - inizio -->
+            <div class="msg-wrapper msg-received-white">
+              <p class="msg-text">Sì, sono in attesa di risposta</p>
+              <span class="msg-time">09:10</span>
+              <span class="hide"><i class="fa fa-chevron-down f-right"></i></span>
+            </div>
+            <div class="message-options">
+            	<div class="message-info">Info messaggio</div>
+            	<div class="message-delete">Cancella messaggio</div>
+            </div>
+            <!-- Messaggio ricevuto - fine -->
+          </div>
+          <!-- CHAT dinamiche JS - fine -->
 
 
           <!-- Barra composizione msg - inizio -->
@@ -216,18 +404,24 @@
     <!-- ***************  Templates *************** -->
 
     <!-- Template msg inviato -->
-    <div class="template ">
+    <div class="template hide">
       <div class="msg-wrapper">
         <p class="msg-text"></p>
         <span class="msg-time"></span>
+        <i class="fa fa-chevron-down f-right "></i>
+      </div>
+      <div class="message-options">
+      	<div class="message-info">Info messaggio</div>
+      	<div class="message-delete">Cancella messaggio</div>
       </div>
     </div>
 
-    <!-- Template msg generato automaticamente da pc -->
-    <div class="template-pc ">
+    <!-- Template msg generato automaticamente da pc (a sx)-->
+    <div class="template-pc hide">
       <div class="msg-wrapper">
         <p class="msg-text">OK!</p>
         <span class="msg-time"></span>
+        <i class="fa fa-chevron-down f-right "></i>
       </div>
     </div>
 

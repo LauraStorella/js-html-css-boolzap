@@ -27,7 +27,8 @@ general rules {}
   height: 100vh;
   width: 100%;
   min-width: 900px;
-  background-color: white; //DEBUG
+  background-image: linear-gradient(to bottom, #009688 0px, #009688 15vh, #dddbd1 15vh, #d2dbdc 100%);
+  /* background-color: white; //DEBUG */
 }
 
 /* Wrapper menu e chat */
@@ -43,6 +44,13 @@ general rules {}
   display: block;
 }
 .hide {
+  display: none;
+}
+
+.chat-active {
+  display: flex;
+}
+.chat.hide {
   display: none;
 }
 /* BASE LAYOUT - fine */
@@ -177,7 +185,10 @@ Navbar right-menu */
 .contact {
   height: 70px;
   width: 100%;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid #f5f5f5;
+}
+.contact.box {
+  cursor: pointer;
 }
 .contact .icon-box img {
   float: left;
@@ -185,6 +196,9 @@ Navbar right-menu */
   width: 50px;
   height: 50px;
   cursor: pointer;
+}
+.contact.active {
+  background-color: lightgray;
 }
 
 /* Stile contenuto msg chat */
@@ -234,6 +248,7 @@ Navbar right-menu */
   flex-direction: column;
   align-items: flex-start;
   padding: 0 100px;
+  position: relative;  //freccia option e msg-options position:absolute
 }
 
 
@@ -264,6 +279,37 @@ Navbar right-menu */
   align-self: flex-start;
 }
 
+/* icona dropdown */
+.chat i {
+  color: #b6b9bb;
+  font-size: 23px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+/* Finestra opzioni messaggio (info-cancella) */
+.message-options {
+  /* display: none; */
+	position: absolute;
+	bottom: -70px;
+  left: 115px;
+	width: 150px;
+	height: 80px;
+	background: white;
+	box-shadow: 0px 0px 40px -15px rgba(0,0,0,0.50);
+  display: none;
+}
+.message-options.right {
+  position: absolute;
+  bottom: 0px;
+  left: 468px;
+  display: none;
+}
+.message-options .message-info,
+.message-options .message-delete {
+  cursor: pointer;
+}
 
 
 /* Barra composizione messaggio */
