@@ -157,14 +157,14 @@ $('.contact.box').click( function() {
   $(this).addClass('active');
 
   // Prendo il valore di data-chat relativo al contatto su cui ho cliccato
-  var dataChat = $(this).attr('data-chat');
+  var dataChat = $(this).attr('data-contact');
 
   // Rimuovo la classe .chat-active a tutti gli elementi .chat per nascondere le chat
     //     ---> di default a 1° elemento .chat
   $('.chat').removeClass('chat-active');
 
   // Prendo l'elemento div contenente il msg  il cui attr data-chat corrisponde a quello del contatto cliccato e assegno classe .chat-active
-  var generatedMsg = $('.chat [data-chat = " ' + dataChat + ' "]').addClass('chat-active');
+  var generatedMsg = $('.chat[data-chat = "' + dataChat + '"]').addClass('chat-active');
 
   // Prendo il nome del contatto su cui ho cliccato
   var contactName = $(this).find('.contact-name').text();
