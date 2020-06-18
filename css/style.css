@@ -255,9 +255,12 @@ Navbar right-menu */
 /* Templates per creazione msg chat*/
 .msg-wrapper {
   position: relative;
+  min-width: 150px;
+  max-width: 200px;
   margin: 15px;
   padding: 10px 50px 10px 10px;
   border-radius: 5px;
+  word-wrap: break-word;
 }
 
 .msg-wrapper .msg-time {
@@ -280,14 +283,19 @@ Navbar right-menu */
 }
 
 /* icona dropdown */
-.chat i {
+.chat .arrow i {
   color: #b6b9bb;
-  font-size: 23px;
+  font-size: 15px;
   position: absolute;
   right: 10px;
   top: 10px;
   cursor: pointer;
 }
+
+/* .chat:hover span.hide {
+  display: block;
+} */
+
 /* Finestra opzioni messaggio (info-cancella) */
 .message-options {
   /* display: none; */
@@ -298,13 +306,14 @@ Navbar right-menu */
 	height: 80px;
 	background: white;
 	box-shadow: 0px 0px 40px -15px rgba(0,0,0,0.50);
-  display: none;
 }
 .message-options.right {
   position: absolute;
-  bottom: 0px;
-  left: 468px;
-  display: none;
+  /* bottom: -84px;
+  left: 13px; */
+  bottom: -84px;
+  right: 0px;
+  /* display: none; */
 }
 .message-options .message-info,
 .message-options .message-delete {
@@ -322,18 +331,17 @@ Navbar right-menu */
   background-color: #ededed;
 }
 
-button .btn-emoji {
-  border: none;
-  background-color: #e5ddd5; //DEBUG
+.btn-emoji i {
+  font-size: 30px;
+  color: darkgray;
+  cursor: pointer;
+  background-color: #ededed;
 }
 
 .emoji-icons {
   width: 100px;
   height: 50px;
   border: 1px solid black;
-}
-.smile-icon i {
-  width: 50px;
 }
 
 .text-input {
@@ -343,9 +351,10 @@ button .btn-emoji {
   /* border-radius: 5%; */
   font-size: 15px;
   padding: 10px;
+  border-radius: 10px;
 }
 
-.send-input i {
+.btn-send-msg i {
   font-size: 25px;
   color: black;
   cursor: pointer;

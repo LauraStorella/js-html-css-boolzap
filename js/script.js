@@ -44,7 +44,7 @@ Step #6 - Cancella messaggio: cliccando sul messaggio appare un menu a tendina c
 //come messaggio verde
 
 // Creo evento click tramite tasto invio nella barra di ricerca
-$('.send-input').click( function() {
+$('.btn-send-msg').click( function() {
   sendMsg();
 });
 
@@ -66,7 +66,7 @@ function sendMsg() {
     newMsg.children('.msg-text').text(msgText);
 
     // Aggiungo classe relativa a msg inviato
-    newMsg.addClass('chat msg-wrapper msg-sent-green');
+    newMsg.addClass('msg-sent-green');
 
     // Inserire orario corrente nel msg
     var date = new Date();
@@ -76,7 +76,7 @@ function sendMsg() {
     newMsg.children('.msg-time').text(currentTime);
 
     // Appendo nuovo messaggio nella chat
-    $('.chats').append(newMsg);
+    $('.chat.chat-active').append(newMsg);
     // console.log(newMsg);
 
     // Reset campo input
@@ -94,17 +94,17 @@ function sendMsg() {
 function pcReplay() {
 
     // Clono template msg automatico del pc
-    var pcMsg = $('.template-pc p').clone();
+    var pcMsg = $('.template .msg-wrapper').clone();
     // console.log(newMsg);
 
     // Aggiungo testo del campo input
-    pcMsg.children('.msg-text').text(pcMsg);
+    pcMsg.children('.msg-text').text('OK!');
 
     // Aggiungo classe relativa a msg inviato
-    pcMsg.addClass('chat msg-wrapper msg-received-white');
+    pcMsg.addClass('msg-received-white');
 
     // Appendo nuovo messaggio nella chat
-    $('.chats').append(pcMsg);
+    $('.chat').append(pcMsg);
     // console.log(newMsg);
 
     // Reset campo input
@@ -160,7 +160,7 @@ $('.contact.box').click( function() {
   var dataChat = $(this).attr('data-contact');
 
   // Rimuovo la classe .chat-active a tutti gli elementi .chat per nascondere le chat
-    //     ---> di default a 1° elemento .chat
+    //     ---> di default a 1° elemento è .chat-active
   $('.chat').removeClass('chat-active');
 
   // Prendo l'elemento div contenente il msg  il cui attr data-chat corrisponde a quello del contatto cliccato e assegno classe .chat-active
@@ -183,22 +183,42 @@ $('.contact.box').click( function() {
 
 
 
-// // -------------------- Funzione cancella msg chat --------------------
-//
-// // Creo evento click sull'icona del dropdown del msg
-// $('.msg-wrapper').mouseenter( function() {
-//
-//
-//
-//   $(this).children('.hide span').removeClass('hide');
-//   // Prendo il div .message-options relativo al msg su cui ho cliccato e aggiungo la classe .active per rendere visibile la finestra opzioni msg
-//   // $(this).siblings('.message-options').toggleClass('active');
-// });
+// -------------------- Funzione cancella msg chat --------------------
+
+// Creo evento click sull'icona del dropdown del msg
+$(document).on('mouseenter', '.chat', function() {
+
+  // Visualizzo icona arrow che apre dropdown menu
+  $(this).find('.arrow').removeClass('hide');
+});
 
 
+// Creo evento click sull'icona del dropdown del msg
+$(document).on('mouseleave', '.chat', function() {
+
+  // Scompare icona arrow del dropdown menu
+  $(this).find('.arrow').addClass('hide');
+});
 
 
+// Creo evento  click su icona dropdown menu
+$(document).on('click', '.arrow', function() {
 
+  // alert('test');
+
+  // al click su icona dropdown menu,
+  // visualizzo/nascondo il dropdown menu
+  $(this).nextAll('.message-options').toggleClass('hide');
+});
+
+
+// Creo evento click su voce dropdown menu per cancellare msg
+//    ---> click on voce "canc msg" (classe .message-delete)
+//    ---> rimuovo msg associato a specifico dropdown con (this)
+// parto da elemento cliccato, risalgo il DOM, individuo elemento con classe ".msg-wrapper" che è il contenitore del msg
+$(document).on('click', '.message-delete', function() {
+  $(this).closest('.msg-wrapper').remove();
+});
 
 
 
