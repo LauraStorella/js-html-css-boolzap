@@ -90,7 +90,6 @@ function sendMsg() {
     var currentHours = date.getHours();
     var currentMinutes = date.getMinutes();
     var currentTime = addZeroToTime(currentHours) + ':' + addZeroToTime(currentMinutes);
-    console.log(currentTime);
     newMsg.children('.msg-time').text(currentTime);
 
     // Scrollbar a fine finestra chat

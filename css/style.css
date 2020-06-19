@@ -80,14 +80,14 @@ Navbar right-menu */
 .myprofile-header {
   border-right: 1px solid lightgray;
 }
-.myprofile-header img,
+/* .myprofile-header img,
 .myprofile-right-header img {
   float: left;
   border-radius: 50%;
   width: 45px;
   height: 45px;
   cursor: pointer;
-}
+} */
 .myprofile-header i,
 .myprofile-right-header i {
   float: right;
@@ -191,12 +191,28 @@ Navbar right-menu */
   cursor: pointer;
 }
 .contact .icon-box img {
+  /* float: left;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer; */
+}
+
+.icon-box {
   float: left;
   border-radius: 50%;
   width: 50px;
   height: 50px;
   cursor: pointer;
+  overflow:hidden
 }
+
+.myprofile-header .icon-box,
+.myprofile-right-header .icon-box {
+  width: 45px;
+  height: 45px;
+}
+
 .contact.active {
   background-color: lightgray;
 }
@@ -236,20 +252,21 @@ Navbar right-menu */
 /* Sezione conversazioni */
 /* Wrapper chat */
 .chats {
+  width: 100%;
   height: calc(100% - 130px);  //130px --> header + barra invio msg
-  /* overflow-y: auto; */
-  /* background-image: url('../img/background.jpg'); */
   position: relative;  // box-icons position: absolute;
+  background-image: url('../img/background.jpg');
+  overflow-y: auto;
 }
 
 .chat {
-  height: 100%;
+  /* height: 100%; */
   display: none;
   flex-direction: column;
   align-items: flex-start;
-  overflow-y: auto;
+  /* overflow-y: auto; */
   padding: 0 150px;
-  background-image: url('../img/background.jpg');
+
   position: relative;  //freccia option e msg-options position:absolute
 }
 
@@ -337,10 +354,11 @@ Navbar right-menu */
   text-align: justify;
   overflow-y: scroll;
   background-color: rgba(255,255,255, 0.5);
-  position: absolute;
-  bottom: 0;
+  position: relative;
   left: 0;
+  bottom: -122px;
 }
+
 .box-emoji .icons-emoji {
   display: inline;
   font-size: 25px;
