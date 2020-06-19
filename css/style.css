@@ -320,8 +320,11 @@ Navbar right-menu */
   color: white;
   padding: 10px;
 }
-.message-options.hide {
+.message-options {
   display: none;
+}
+.message-options.show {
+  display: block;
 }
 
 

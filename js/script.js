@@ -43,9 +43,19 @@ Step #6 - Cancella messaggio: cliccando sul messaggio appare un menu a tendina c
 //e cliccando “invia” il testo viene aggiunto al thread sopra,
 //come messaggio verde
 
-// Creo evento click tramite tasto invio nella barra di ricerca
+// Creo evento click tramite tasto invio nella barra invio msg
 $('.btn-send-msg').click( function() {
   sendMsg();
+});
+
+
+// -------------------- Funzione modifica tasto invio-msg  --------------------
+$('.send-msg-bar input').focus( function() {
+  $('.btn-send-msg i').removeClass('fa-microphone').addClass('fa-paper-plane');
+});
+
+$('.send-msg-bar input').blur( function() {
+  $('.btn-send-msg i').removeClass('fa-paper-plane').addClass('fa-microphone');
 });
 
 
@@ -183,53 +193,8 @@ $('.contact.box').click( function() {
 
 
 
-// -------------------- Funzione cancella msg chat --------------------
-
-// Creo evento click sull'icona del dropdown del msg
-$(document).on('mouseenter', '.chat', function() {
-
-  // Visualizzo icona arrow che apre dropdown menu
-  $(this).find('.arrow').removeClass('hide');
-});
-
-
-// Creo evento click sull'icona del dropdown del msg
-$(document).on('mouseleave', '.chat', function() {
-
-  // Scompare icona arrow del dropdown menu
-  $(this).find('.arrow').addClass('hide');
-});
-
-
-// Creo evento  click su icona dropdown menu
-$(document).on('click', '.arrow', function() {
-
-  // alert('test');
-
-  // al click su icona dropdown menu,
-  // visualizzo/nascondo il dropdown menu
-  $(this).nextAll('.message-options').toggleClass('hide');
-});
-
-
-// Creo evento click su voce dropdown menu per cancellare msg
-//    ---> click on voce "canc msg" (classe .message-delete)
-//    ---> rimuovo msg associato a specifico dropdown con (this)
-// parto da elemento cliccato, risalgo il DOM, individuo elemento con classe ".msg-wrapper" che è il contenitore del msg
-$(document).on('click', '.message-delete', function() {
-  $(this).closest('.msg-wrapper').remove();
-});
-
-
-// Creo evento click sull'icona del dropdown del msg
-$(document).on('mouseleave', '.message-options', function() {
-
-  // Scompare icona arrow del dropdown menu
-  $(this).addClass('hide');
-});
-
-
-// // ++++++++++++++++ PROVA ++++++++++++++++
+// // -------------------- Funzione cancella msg chat  con ToggleClass --------------------
+//
 // // Creo evento click sull'icona del dropdown del msg
 // $(document).on('mouseenter', '.chat', function() {
 //
@@ -253,8 +218,7 @@ $(document).on('mouseleave', '.message-options', function() {
 //
 //   // al click su icona dropdown menu,
 //   // visualizzo/nascondo il dropdown menu
-//   $('.arrow').not(this).closest('.message-options').removeClass('hide');
-//   $(this).closest('.message-options').toggleClass('hide');
+//   $(this).nextAll('.message-options').toggleClass('hide');
 // });
 //
 //
@@ -276,20 +240,50 @@ $(document).on('mouseleave', '.message-options', function() {
 
 
 
+// ------------ Funzione cancella msg chat con Add/Remove Class & ToggleClass -----------
+
+// Creo evento click sull'icona del dropdown del msg
+$(document).on('mouseenter', '.chat', function() {
+
+  // Visualizzo icona arrow che apre dropdown menu
+  $(this).find('.arrow').removeClass('hide');
+});
+
+// Creo evento click sull'icona del dropdown del msg
+$(document).on('mouseleave', '.chat', function() {
+
+  // Scompare icona arrow del dropdown menu
+  $(this).find('.arrow').addClass('hide');
+});
 
 
+// Creo evento  click su icona dropdown menu
+// al click su icona dropdown menu,
+$(document).on('click', '.arrow', function() {
+
+  // alert('test');
+  $(this).parent().siblings().find('.message-options').removeClass('show');
+
+  // visualizzo/nascondo il dropdown menu
+  $(this).siblings('.message-options').toggleClass('show');
+});
 
 
+// Creo evento click su voce dropdown menu per cancellare msg
+//    ---> click on voce "canc msg" (classe .message-delete)
+//    ---> rimuovo msg associato a specifico dropdown con (this)
+// parto da elemento cliccato, risalgo il DOM, individuo elemento con classe ".msg-wrapper" che è il contenitore del msg
+$(document).on('click', '.message-delete', function() {
+  $(this).closest('.msg-wrapper').remove();
+});
 
 
+// Creo evento click sull'icona del dropdown del msg
+$(document).on('mouseleave', '.message-options', function() {
 
-
-
-
-
-
-
-
+  // Scompare icona arrow del dropdown menu
+  $(this).addClass('hide');
+});
 
 
 
