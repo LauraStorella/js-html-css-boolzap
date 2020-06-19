@@ -98,13 +98,15 @@ Navbar right-menu */
 
 /* Pannello notifiche */
 .notification-panel {
+  display: flex;
+  align-items: center;
   height: 90px;
   width: 100%;
   background-color: #9de1fe;
 }
 .notification-panel i {
   padding: 10px;
-  font-size: 20px;
+  font-size: 25px;
   color: #9de1fe;
 }
 
@@ -152,22 +154,27 @@ Navbar right-menu */
 .search-bar {
   height: 50px;
   width: 100%;
-  justify-content: center;
+  padding: 10px;
   background-color: #ededed;
-  line-height: 50px;
 }
-.search-icon {
-  width: 25%;
-  position: relative;
-  left: 5px;
-  font-size: 14px;
-  padding: 5px 5px 5px 15px;
-  color: gray;
+.search-bar-wrapper {
   background-color: white;
 }
+.search-icon label {
+  width: 60px;
+  display: inline-block;
+  text-align: center;
+  /* font-size: 14px;
+  color: gray; */
+  background-color: white;
+}
+.search-icon i {
+  padding-left: 13px;
+}
 .search-bar input {
-  width: 90%;
-  border: none;
+  width: calc(100% - 67px);
+  height: 100%;
+  border: 0;
   font-size: 15px;
   padding: 5px 5px 5px 15px;
 }
@@ -273,8 +280,8 @@ Navbar right-menu */
 /* Templates per creazione msg chat*/
 .msg-wrapper {
   position: relative;
-  min-width: 150px;
-  max-width: 300px;
+  min-width: 200px;
+  max-width: 350px;
   margin: 15px;
   padding: 10px 50px 10px 10px;
   border-radius: 5px;
@@ -319,8 +326,8 @@ Navbar right-menu */
 .message-options {
   /* display: none; */
 	position: absolute;
-	bottom: -70px;
-  left: 115px;
+	top: 85%;
+  left: 0;
 	width: 150px;
 	height: 80px;
   border-radius: 3px;
@@ -328,9 +335,7 @@ Navbar right-menu */
 	box-shadow: 0px 0px 40px -15px rgba(0,0,0,0.50);
 }
 .message-options.right {
-  position: absolute;
-  bottom: -84px;
-  right: 0px;
+  right: 0;
 }
 .message-options .message-info,
 .message-options .message-delete {

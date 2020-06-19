@@ -94,7 +94,7 @@ function sendMsg() {
 
     // Scrollbar a fine finestra chat
     // $('.chats').scrollTop($('.chats').height());
-    // $('.chats').scrollTop($('.chats').prop('scrollHeight'));
+    $('.chats').scrollTop($('.chats').prop('scrollHeight'));
 
     // Appendo nuovo messaggio nella chat
     $('.chat.chat-active').append(newMsg);
