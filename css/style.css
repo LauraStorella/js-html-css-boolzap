@@ -236,16 +236,14 @@ Navbar right-menu */
 /* Sezione conversazioni */
 /* Wrapper chat */
 .chats {
-  height: calc(100% - 130px);  //130px --> header + barra invio msg + box emoji
+  height: calc(100% - 130px);  //130px --> header + barra invio msg
   overflow-y: auto;
-  /* background-color: darkgray; //DEBUG */
   background-image: url('../img/background.jpg');
   position: relative;  // box-icons position: absolute;
 }
 
 .chat {
   display: none;
-  /* display: flex; */
   flex-direction: column;
   align-items: flex-start;
   padding: 0 150px;

@@ -59,6 +59,13 @@ $('.send-msg-bar input').blur( function() {
 });
 
 
+// -------------------- Funzione pressione tasto invio in input per invio msg  --------------------
+$('.send-msg-bar input').keypress( function() {
+  if( event.which === 13 || event.keyCode === 13) {
+    sendMsg();
+  }
+});
+
 // Funzione - clono e appendo messaggio
 function sendMsg() {
 
@@ -82,8 +89,12 @@ function sendMsg() {
     var date = new Date();
     var currentHours = date.getHours();
     var currentMinutes = date.getMinutes();
-    var currentTime = currentHours + ':' + currentMinutes;
+    var currentTime = addZeroToTime(currentHours) + ':' + addZeroToTime(currentMinutes);
+    console.log(currentTime);
     newMsg.children('.msg-time').text(currentTime);
+
+    // Scrollbar a fine finestra chat
+    $('.chats').scrollTop($('.chats').height());
 
     // Appendo nuovo messaggio nella chat
     $('.chat.chat-active').append(newMsg);
@@ -95,6 +106,14 @@ function sendMsg() {
     //Risposta generata automaticamente da pc dopo 1 secondo
     setTimeout(pcReplay, 1000);
   }
+}
+
+
+// Funzione per aggiungere 0 a orario se numero < 10
+function addZeroToTime(number) {
+    if ( number < 10) {
+      return '0' + number;
+    }
 }
 
 
@@ -303,26 +322,6 @@ $(document).on('keypress', '.send-msg-bar', function() {
 // $(document).on('keypress', '.send-msg-bar', function() {
 //   $(this).find('.last-access').text('Sta scrivendo...');
 // });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
