@@ -236,10 +236,11 @@ Navbar right-menu */
 /* Sezione conversazioni */
 /* Wrapper chat */
 .chats {
-  height: calc(100% - 130px);  //130px --> header + barra invio mesg
+  height: calc(100% - 130px);  //130px --> header + barra invio msg + box emoji
   overflow-y: auto;
   /* background-color: darkgray; //DEBUG */
   background-image: url('../img/background.jpg');
+  position: relative;  // box-icons position: absolute;
 }
 
 .chat {
@@ -247,7 +248,7 @@ Navbar right-menu */
   /* display: flex; */
   flex-direction: column;
   align-items: flex-start;
-  padding: 0 100px;
+  padding: 0 150px;
   position: relative;  //freccia option e msg-options position:absolute
 }
 
@@ -304,22 +305,36 @@ Navbar right-menu */
   left: 115px;
 	width: 150px;
 	height: 80px;
-	background: white;
+  border-radius: 3px;
+	background-color: rgba(60, 60, 60, 0.5);
 	box-shadow: 0px 0px 40px -15px rgba(0,0,0,0.50);
 }
 .message-options.right {
   position: absolute;
-  /* bottom: -84px;
-  left: 13px; */
   bottom: -84px;
   right: 0px;
-  /* display: none; */
 }
 .message-options .message-info,
 .message-options .message-delete {
   cursor: pointer;
+  color: white;
+  padding: 10px;
 }
 
+
+/* Box emoji */
+.box-emoji {
+  width: 100%;
+  height: 200px;
+  padding-left: 7px;
+  background-color: rgba(255,255,255, 0.5);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.box-emoji. .icons-emoji {
+  /* font-size: 50px; */
+}
 
 /* Barra composizione messaggio */
 .send-msg-bar {
@@ -336,12 +351,6 @@ Navbar right-menu */
   color: darkgray;
   cursor: pointer;
   background-color: #ededed;
-}
-
-.emoji-icons {
-  width: 100px;
-  height: 50px;
-  border: 1px solid black;
 }
 
 .text-input {

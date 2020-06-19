@@ -221,8 +221,25 @@ $(document).on('click', '.message-delete', function() {
 });
 
 
+// Creo evento click sull'icona del dropdown del msg
+$(document).on('mouseleave', '.message-options', function() {
+
+  // Scompare icona arrow del dropdown menu
+  $(this).addClass('hide');
+});
 
 
+
+// -------------------- Funzione display box-emoji --------------------
+$(document).on('click', '.btn-emoji', function() {
+  $('.box-emoji').fadeToggle();
+});
+
+
+// -------------------- Funzione change status --------------------
+$(document).on('keypress', '.send-msg-bar', function() {
+  $('.last-access').text('Sta scrivendo...');
+});
 
 
 
