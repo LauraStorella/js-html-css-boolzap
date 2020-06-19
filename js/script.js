@@ -92,13 +92,13 @@ function sendMsg() {
     var currentTime = addZeroToTime(currentHours) + ':' + addZeroToTime(currentMinutes);
     newMsg.children('.msg-time').text(currentTime);
 
-    // Scrollbar a fine finestra chat
-    // $('.chats').scrollTop($('.chats').height());
-    $('.chats').scrollTop($('.chats').prop('scrollHeight'));
-
     // Appendo nuovo messaggio nella chat
     $('.chat.chat-active').append(newMsg);
     // console.log(newMsg);
+
+    // Scrollbar a fine finestra chat
+    // $('.chats').scrollTop($('.chats').height());
+    $('.chats').scrollTop($('.chats').prop('scrollHeight'));
 
     // Reset campo input
     $('.text-input').val(' ');
@@ -123,22 +123,30 @@ function addZeroToTime(number) {
 // -------------------- Funzione msg automatico pc --------------------
 function pcReplay() {
 
-    // Clono template msg automatico del pc
-    var pcMsg = $('.template .msg-wrapper').clone();
-    // console.log(newMsg);
+  // Clono template del msg
+  var newMsg = $('.template .msg-wrapper').clone();
+  // console.log(newMsg);
 
-    // Aggiungo testo del campo input
-    pcMsg.children('.msg-text').text('OK!');
+  // Aggiungo testo del campo input
+  newMsg.children('.msg-text').text('OK!');
 
-    // Aggiungo classe relativa a msg inviato
-    pcMsg.addClass('msg-received-white');
+  // Aggiungo classe relativa a msg inviato
+  newMsg.addClass('msg-received-white');
 
-    // Appendo nuovo messaggio nella chat
-    $('.chat.chat-active').append(pcMsg);
-    // console.log(newMsg);
+  // Inserire orario corrente nel msg
+  var date = new Date();
+  var currentHours = date.getHours();
+  var currentMinutes = date.getMinutes();
+  var currentTime = addZeroToTime(currentHours) + ':' + addZeroToTime(currentMinutes);
+  newMsg.children('.msg-time').text(currentTime);
 
-    // Reset campo input
-    $('.text-input').val(' ');
+  // Appendo nuovo messaggio nella chat
+  $('.chat.chat-active').append(newMsg);
+  // console.log(newMsg);
+
+  // Scrollbar a fine finestra chat
+  // $('.chats').scrollTop($('.chats').height());
+  $('.chats').scrollTop($('.chats').prop('scrollHeight'));
 }
 
 
@@ -263,14 +271,12 @@ $('.contact.box').click( function() {
 
 // Creo evento click sull'icona del dropdown del msg
 $(document).on('mouseenter', '.chat', function() {
-
   // Visualizzo icona arrow che apre dropdown menu
   $(this).find('.arrow').removeClass('hide');
 });
 
 // Creo evento click sull'icona del dropdown del msg
 $(document).on('mouseleave', '.chat', function() {
-
   // Scompare icona arrow del dropdown menu
   $(this).find('.arrow').addClass('hide');
 });
@@ -279,12 +285,16 @@ $(document).on('mouseleave', '.chat', function() {
 // Creo evento  click su icona dropdown menu
 // al click su icona dropdown menu,
 $(document).on('click', '.arrow', function() {
-
-  // alert('test');
-  $(this).parent().siblings().find('.message-options').removeClass('show');
-
+  // $(this).parents().siblings().find('.message-options').removeClass('show');
+  $('.arrow').not(this).siblings('.message-options').removeClass('show');  // con NOT
   // visualizzo/nascondo il dropdown menu
   $(this).siblings('.message-options').toggleClass('show');
+});
+
+// Creo evento mouseleave su dropdown del msg
+$(document).on('mouseleave', '.message-options', function() {
+  // Scompare pannello dropdown
+  $(this).remove();
 });
 
 
@@ -299,7 +309,6 @@ $(document).on('click', '.message-delete', function() {
 
 // Creo evento click sull'icona del dropdown del msg
 $(document).on('mouseleave', '.message-options', function() {
-
   // Scompare icona arrow del dropdown menu
   $(this).addClass('hide');
 });
