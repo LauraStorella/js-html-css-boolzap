@@ -91,6 +91,11 @@ Navbar right-menu */
   color: gray;
 }
 
+.profile-info {
+  flex-grow: 1;
+  padding: 10px;
+}
+
 /* Pannello notifiche */
 .notification-panel {
   height: 90px;

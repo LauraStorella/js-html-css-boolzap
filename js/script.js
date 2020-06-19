@@ -167,7 +167,6 @@ $('.search-bar').keyup(function(event){
 
 
 
-
 // MILESTONE 3
 // -------------------- Funzione mostra chat contatto cliccato --------------
 
@@ -316,13 +315,15 @@ $(document).on('click', '.btn-emoji', function() {
 
 
 // -------------------- Funzione change status --------------------
+$(document).on('focus', '.send-msg-bar', function() {
+  $('.last-access').text('Sta scrivendo...');
+});
 $(document).on('keypress', '.send-msg-bar', function() {
   $('.last-access').text('Sta scrivendo...');
 });
-
-// $(document).on('keypress', '.send-msg-bar', function() {
-//   $(this).find('.last-access').text('Sta scrivendo...');
-// });
+$(document).on('blur', '.send-msg-bar', function() {
+  $('.last-access').text('Ultimo accesso oggi alle 16:00');
+});
 
 
 
