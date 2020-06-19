@@ -265,4 +265,5 @@ $(document).on('keypress', '.send-msg-bar', function() {
 
 
 
+
 });  // document ready
