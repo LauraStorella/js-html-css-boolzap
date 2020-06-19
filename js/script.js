@@ -94,7 +94,8 @@ function sendMsg() {
     newMsg.children('.msg-time').text(currentTime);
 
     // Scrollbar a fine finestra chat
-    $('.chats').scrollTop($('.chats').height());
+    // $('.chats').scrollTop($('.chats').height());
+    // $('.chats').scrollTop($('.chats').prop('scrollHeight'));
 
     // Appendo nuovo messaggio nella chat
     $('.chat.chat-active').append(newMsg);
@@ -110,12 +111,13 @@ function sendMsg() {
 
 
 // Funzione per aggiungere 0 a orario se numero < 10
+//   ---> numero : numero
 function addZeroToTime(number) {
     if ( number < 10) {
       return '0' + number;
     }
+    return number
 }
-
 
 
 // MILESTONE 2

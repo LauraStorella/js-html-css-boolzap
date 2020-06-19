@@ -237,16 +237,19 @@ Navbar right-menu */
 /* Wrapper chat */
 .chats {
   height: calc(100% - 130px);  //130px --> header + barra invio msg
-  overflow-y: auto;
-  background-image: url('../img/background.jpg');
+  /* overflow-y: auto; */
+  /* background-image: url('../img/background.jpg'); */
   position: relative;  // box-icons position: absolute;
 }
 
 .chat {
+  height: 100%;
   display: none;
   flex-direction: column;
   align-items: flex-start;
+  overflow-y: auto;
   padding: 0 150px;
+  background-image: url('../img/background.jpg');
   position: relative;  //freccia option e msg-options position:absolute
 }
 
