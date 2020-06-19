@@ -104,7 +104,7 @@ function pcReplay() {
     pcMsg.addClass('msg-received-white');
 
     // Appendo nuovo messaggio nella chat
-    $('.chat').append(pcMsg);
+    $('.chat.chat-active').append(pcMsg);
     // console.log(newMsg);
 
     // Reset campo input
@@ -229,6 +229,71 @@ $(document).on('mouseleave', '.message-options', function() {
 });
 
 
+// // ++++++++++++++++ PROVA ++++++++++++++++
+// // Creo evento click sull'icona del dropdown del msg
+// $(document).on('mouseenter', '.chat', function() {
+//
+//   // Visualizzo icona arrow che apre dropdown menu
+//   $(this).find('.arrow').removeClass('hide');
+// });
+//
+//
+// // Creo evento click sull'icona del dropdown del msg
+// $(document).on('mouseleave', '.chat', function() {
+//
+//   // Scompare icona arrow del dropdown menu
+//   $(this).find('.arrow').addClass('hide');
+// });
+//
+//
+// // Creo evento  click su icona dropdown menu
+// $(document).on('click', '.arrow', function() {
+//
+//   // alert('test');
+//
+//   // al click su icona dropdown menu,
+//   // visualizzo/nascondo il dropdown menu
+//   $('.arrow').not(this).closest('.message-options').removeClass('hide');
+//   $(this).closest('.message-options').toggleClass('hide');
+// });
+//
+//
+// // Creo evento click su voce dropdown menu per cancellare msg
+// //    ---> click on voce "canc msg" (classe .message-delete)
+// //    ---> rimuovo msg associato a specifico dropdown con (this)
+// // parto da elemento cliccato, risalgo il DOM, individuo elemento con classe ".msg-wrapper" che è il contenitore del msg
+// $(document).on('click', '.message-delete', function() {
+//   $(this).closest('.msg-wrapper').remove();
+// });
+//
+//
+// // Creo evento click sull'icona del dropdown del msg
+// $(document).on('mouseleave', '.message-options', function() {
+//
+//   // Scompare icona arrow del dropdown menu
+//   $(this).addClass('hide');
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // -------------------- Funzione display box-emoji --------------------
 $(document).on('click', '.btn-emoji', function() {
@@ -241,7 +306,9 @@ $(document).on('keypress', '.send-msg-bar', function() {
   $('.last-access').text('Sta scrivendo...');
 });
 
-
+// $(document).on('keypress', '.send-msg-bar', function() {
+//   $(this).find('.last-access').text('Sta scrivendo...');
+// });
 
 
 
