@@ -323,15 +323,22 @@ $(document).on('click', '.btn-emoji', function() {
 });
 
 
-// -------------------- Funzione change status --------------------
+// -------------------- Funzione change typing status --------------------
 $(document).on('focus', '.send-msg-bar', function() {
   $('.last-access').text('Sta scrivendo...');
 });
 $(document).on('keypress', '.send-msg-bar', function() {
   $('.last-access').text('Sta scrivendo...');
 });
+
+// Inserire orario corrente nel msg
+var date = new Date();
+var currentHours = date.getHours();
+var currentMinutes = date.getMinutes();
+var currentTime = addZeroToTime(currentHours) + ':' + addZeroToTime(currentMinutes);
+
 $(document).on('blur', '.send-msg-bar', function() {
-  $('.last-access').text('Ultimo accesso oggi alle 16:00');
+  $('.last-access').text('Ultimo accesso oggi alle ' + currentTime);
 });
 
 
