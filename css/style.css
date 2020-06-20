@@ -36,7 +36,6 @@ general rules {}
   height: 95%;
   width: 80%;
   margin: auto;
-  background-color: cyan; //DEBUG - canc
 }
 
 .active {
@@ -234,6 +233,9 @@ Navbar right-menu */
   font-size: 13px;
   color: gray;
 }
+.check-icon i {
+  font-weight: 150px;
+}
 
 
 
@@ -383,37 +385,10 @@ Navbar right-menu */
 }
 
 .btn-send-msg i {
-  font-size: 25px;
-  color: black;
+  font-size: 30px;
+  color: darkgray;
   cursor: pointer;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -448,73 +423,3 @@ class_properties {}
       text-decoration: none;
     }
 /* CLASS PROPERTIES - end rules */
-
-
-
-/* BASE LAYOUT - inizio */
-regole layout {}
-/* BASE LAYOUT - fine */
-
-
-
-/* COMPONENTS (reusable) - start rules */
-components {}
-  components
-/* COMPONENTS (reusable) - end rules */
-
-
-
-/* NAVBAR - start rules */
-nav {}
-  nav {}
-/* NAVBAR - end rules */
-
-
-/* HEADER - start rules */
-header {}
-  header {}
-/* HEADER - end rules */
-
-
-/* MAIN - start rules */
-main {}
-  main {}
-/* MAIN - end rules */
-
-
-/* FOOTER - start rules */
-footer {}
-  footer {}
-/* FOOTER - end rules */
-
-
-
-/* MEDIA QUERY -start rules */
-@media query {}
-  /* Media Query - xs  */
-  @media all and (max-width: 767px) {}
-
-  /* Media Query - sm  */
-  @media all and (min-width: 768px) and (max-width: 991px) {}
-
-  /* Media Query - md  */
-  @media all and (min-width: 992px) and (max-width: 1199px) {}
-
-  /* Media Query - lg  */
-  @media all and (min-width: 1200px) {}
-/* MEDIA QUERY -end rules */
-
-
-
-/* DEBUGG - start rules*/
-/* debug {}
-  .debug .container {
-    background-color: #16D893;
-    border: 1px solid blue;
-  }
-  .debug [class*="col-"] {
-    background-color: yellow;
-    border: 1px solid red;
-    height: 100px;
-  } */
-/* DEBUGG - end rules */
